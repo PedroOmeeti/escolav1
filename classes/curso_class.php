@@ -31,7 +31,7 @@ class Curso{
     }
     public function Listar(){
         $banco = Banco::conectar();
-        $sql = "SELECT * FROM docente";
+        $sql = "SELECT * FROM curso";
         $comando = $banco->prepare($sql);
         $comando->execute();
         // "Salvar" o resultado da consulta (tabela) na $resultado
@@ -62,7 +62,7 @@ class Curso{
         $sql = "UPDATE docente SET nome_docente = ?, email_docente = ?, telefone_docente = ? WHERE id_docente = ?";
         $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $comando = $banco->prepare($sql);
-        $comando->execute(array($this->nome, $this->email, $this->telefone, $this->id));
+        // $comando->execute(array($this->nome, $this->email, $this->telefone, $this->id));
         Banco::desconectar();
         // Retornar quantidade de linhas alteradas:
         return $comando->rowCount();

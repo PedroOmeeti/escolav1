@@ -6,7 +6,8 @@ $msg = [
     "Contato atualizado com sucesso!",
     "Turma cadastrada com sucesso!",
     "Docente removido com sucesso!",
-    "Docente cadastrado com sucesso"
+    "Docente cadastrado com sucesso",
+    "Aluno cadastrado com sucesso",
 ];
  
 $erro = [
@@ -16,7 +17,8 @@ $erro = [
     "Falha ao excluir contato.",
     "Falha ao modificar contato.",
     "Falha ao cadastrar turma.",
-    "Verifique se o docente não está vinculado à alguma turma antes de remover!"
+    "Verifique se o docente não está vinculado à alguma turma antes de remover!",
+    "Falha ao cadastrar o aluno.!"
 ];
  
 // ../view/login.php?msg=0

@@ -17,8 +17,6 @@ session_start();
         $c->nome = $_POST['nomeCurso'];
         $c->dataInicio = $_POST['datainicioCurso'];
         $c->dataFim = $_POST['datafimCurso'];
-        $c->turma = $_POST['nomeTurma'];
-        $c->docente = $_POST['nomeDocente'];
         
  
 

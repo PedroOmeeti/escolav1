@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <title>Cadastro Aluno</title>
+  <title>Cadastro Docente</title>
 </head>
 
 <body>
@@ -36,15 +36,15 @@
                   Cadastrar
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="cad_aluno.html">Aluno</a></li>
-                  <li><a class="dropdown-item" href="cad_docente.html">Docente</a></li>
-                  <li><a class="dropdown-item" href="cad_turma.html">Turma</a></li>
-                  <li><a class="dropdown-item" href="cad_curso.html">Curso</a></li>
+                  <li><a class="dropdown-item" href="cad_aluno_view.php">Aluno</a></li>
+                  <li><a class="dropdown-item" href="cad_docente_view.php">Docente</a></li>
+                  <li><a class="dropdown-item" href="cad_turma_view.php">Turma</a></li>
+                  <li><a class="dropdown-item" href="cad_curso_view.php">Curso</a></li>
 
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="cad_matricula.html">Matricula</a></li>
+                  <li><a class="dropdown-item" href="cad_matricula_view.php">Matricula</a></li>
                 </ul>
               </li>
 
@@ -55,15 +55,15 @@
     </div>
   </div>
 
-  <div class="h1 text-center bg-dark text-white p-3">Cadastro Aluno</div>
+  <div class="h1 text-center bg-dark text-white p-3">Cadastro Docente</div>
   <div class="container">
-    <form action="./controller/cad_aluno.php" method="post">
+    <form action="./controller/cad_docente.php" method="post">
 
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="nomeAluno" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nomeAluno" name="nomeAluno">
+            <label for="nomeDocente" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeDocente" name="nomeDocente">
           </div>
         </div>
       </div>
@@ -71,15 +71,15 @@
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="cpfAluno" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpfAluno" name="cpfAluno">
+            <label for="cpfDocente" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="cpfDocente" name="cpfDocente">
           </div>
         </div>
         <div class="col">
           <div class="mb-3">
-            <label for="datanascAluno" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control" id="datanascAluno" name="datanascAluno">
-            
+            <label for="emailDocente" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailDocente" name="emailDocente">
+            <div id="" class="form-text">Nunca compartilhe o seu email com ninguém.</div>
           </div>
         </div>
       </div>
@@ -96,8 +96,8 @@
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="cepAluno" class="form-label">CEP</label>
-            <input type="text" class="form-control" id="cepAluno" name="cepAluno">
+            <label for="cepDocente" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="cepDocente" name="cepDocente">
           </div>
         </div>
       </div>
@@ -105,14 +105,14 @@
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="estadoAluno" class="form-label">Estado</label>
-            <input type="text" class="form-control" id="estadoAluno" name="estadoAluno">
+            <label for="estadoDocente" class="form-label">Estado</label>
+            <input type="text" class="form-control" id="estadoDocente" name="estadoDocente">
           </div>
         </div>
         <div class="col">
           <div class="mb-3">
-            <label for="ruaAluno" class="form-label">Rua</label>
-            <input type="text" class="form-control" id="ruaAluno" name="ruaAluno">
+            <label for="ruaDocente" class="form-label">Rua</label>
+            <input type="text" class="form-control" id="ruaDocente" name="ruaDocente">
           </div>
         </div>
       </div>
@@ -120,22 +120,22 @@
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="bairroAluno" class="form-label">Bairro</label>
-            <input type="text" class="form-control" id="bairroAluno" name="bairroAluno">
+            <label for="bairroDocente" class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="bairroDocente" name="bairroDocente">
           </div>
         </div>
         <div class="col">
           <div class="mb-3">
-            <label for="cidadeAluno" class="form-label">Cidade</label>
-            <input type="text" class="form-control" id="cidadeAluno" name="cidadeAluno">
+            <label for="cidadeDocente" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="cidadeDocente" name="cidadeDocente">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="paisAluno" class="form-label">País</label>
-            <input type="text" class="form-control" id="paisAluno" name="paisAluno">
+            <label for="paisDocente" class="form-label">País</label>
+            <input type="text" class="form-control" id="paisDocente" name="paisDocente">
           </div>
         </div>
       </div>

@@ -9,14 +9,16 @@ session_start();
  
 
         // Instanciar um obj do tipo contato:
-        $c = new Docente();
+        $c = new Aluno();
 
  
 
         // Definir os valores das suas propriedades:
         $c->nome = $_POST['nomeAluno'];
         $c->cpf = $_POST['cpfAluno'];
-        $c->datanasc = $_POST['datanascAluno'];
+        $c->data_nasc = $_POST['datanascAluno'];
+        $c->tel1 = $_POST['tel1Aluno'];
+        $c->tel2 = $_POST['tel2Aluno'];
         $c->cep = $_POST['cepAluno'];
         $c->estado = $_POST['estadoAluno'];
         $c->rua = $_POST['ruaAluno'];
@@ -28,22 +30,23 @@ session_start();
 
  
 
-        // try{
+        try{
             $c->Inserir();
-            header('Location: ../view/cad_docente_view.php?msg=6');
+            // header('Location: ../view/cad_aluno_view.php?msg=6');
+            header('Location: ../cad_aluno_view.php?msg=7');
             exit();
 
  
 
  
 
-        // }catch(PDOException $e) {
-        //     header('Location: ../view/cad_docente_view.php?erro=5');
+        }catch(PDOException $e) {
+            header('Location: ../cad_aluno_view.php?erro=7');
 
  
 
 
-        // }
+        }
 
  
 

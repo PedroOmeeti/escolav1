@@ -1,3 +1,17 @@
+<?php
+ 
+ require_once('./classes/aluno_class.php');
+ require_once('./classes/curso_class.php');
+
+$c = new Curso();
+  $resultadoCurso = $c ->Listar();
+
+ $c = new Aluno();
+ // Guardar o array de resultado na variavel:
+ $resultadoAluno = $c->ListarCpf();
+
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -36,15 +50,15 @@
                   Cadastrar
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="cad_aluno.html">Aluno</a></li>
-                  <li><a class="dropdown-item" href="cad_docente.html">Docente</a></li>
-                  <li><a class="dropdown-item" href="cad_turma.html">Turma</a></li>
-                  <li><a class="dropdown-item" href="cad_curso.html">Curso</a></li>
+                  <li><a class="dropdown-item" href="cad_aluno_view.php">Aluno</a></li>
+                  <li><a class="dropdown-item" href="cad_docente_view.php">Docente</a></li>
+                  <li><a class="dropdown-item" href="cad_turma_view.php">Turma</a></li>
+                  <li><a class="dropdown-item" href="cad_curso_view.php">Curso</a></li>
 
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="cad_matricula.html">Matricula</a></li>
+                  <li><a class="dropdown-item" href="cad_matricula_view.php">Matricula</a></li>
                 </ul>
               </li>
 
@@ -63,7 +77,16 @@
         <div class="col">
           <div class="mb-3">
             <label for="matriculaAluno" class="form-label">Nome Aluno</label>
-            <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno">
+              <?php foreach($resultadoAluno as $aluno){ ?>
+                <!-- Loop através dos resultado da query -->
+                <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno">
+              <?php } ?>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="cpfalunoMatricula" class="form-label">CPF Aluno</label>
+            <input type="text" class="form-control" id="cpfalunoMatricula" name="cpfalunoMatricula">
           </div>
         </div>
       </div>
@@ -71,22 +94,23 @@
       <div class="row">
         <div class="col">
           <div class="mb-3">
-            <label for="matriculaCurso" class="form-label">Nome Curso</label>
-            <input type="text" class="form-control" id="matriculaCurso" name="matriculaCurso">
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="mb-3">
-            <label for="matriculaDocente" class="form-label">Docente</label>
-            <select class="form-select" aria-label="Default select example" id="matriculaDocente" name="matriculaDocente">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <label for="matriculaCurso" class="form-label">Curso</label>
+            <select class="form-select" aria-label="Default select example" id="matriculaCurso" name="matriculaCurso">
+              <option selected>Escolha o curso</option>
+              <?php foreach($resultadoCurso as $curso){ ?>
+                 <!-- Loop através dos resultado da query -->
+                  <option value="<?=$curso['id_curso'];?>"> <?=$curso['nome_curso'];?></option>
+                <?php } ?>
             </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label for="codigoMatricula" class="form-label">Matricula</label>
+            <input type="text" class="form-control" id="codigoMatricula" name="codigoMatricula">
           </div>
         </div>
       </div>
@@ -96,18 +120,6 @@
           <div class="mb-3">
             <label for="dataMatricula" class="form-label">Data de Matrícula</label>
             <input type="date" class="form-control" id="dataMatricula" name="dataMatricula">
-          </div>
-        </div>
-       
-        <div class="col">
-          <div class="mb-3">
-            <label for="statusMatricula" class="form-label">Status da Matricula</label>
-            <select class="form-select" aria-label="Default select example" id="statusMatricula" name="statusMatricula">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
           </div>
         </div>
       </div>
